@@ -1,8 +1,13 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const errorHandler = require('./middleware/errorHandler');
 
 dotenv.config();
+const errorHandler = require('./middleware/errorHandler');
+const connectDB = require('./config/db');
+console.log("MONGO_URI:", process.env.MONGO_URI);
+
+
+connectDB();
 
 const app = express();
 const PORT = process.env.PORT || 5000;

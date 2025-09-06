@@ -3,6 +3,7 @@
 // @access Public
 const asyncHandler = require("express-async-handler");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 const User = require("../models/userModel");
 
 const signupHandler = asyncHandler(async (req, res) => {
@@ -42,4 +43,48 @@ const signupHandler = asyncHandler(async (req, res) => {
   });
 });
 
-module.exports = { signupHandler };
+
+const loginHandler = asyncHandler(async (req, res) => {
+  const { email, password } = req.body;
+
+  // 1. Validate input
+  if (!email || !password) {
+    res.status(400);
+    throw new Error("Email and password are required");
+  }
+
+  // 2. Find user
+  const user = await User.findOne({ email });
+  if (!user) {
+    res.status(401); // Unauthorized
+    throw new Error("Invalid credentials");
+  }
+
+  // 3. Compare password
+  const isMatch = await bcrypt.compare(password, user.password);
+  if (!isMatch) {
+    res.status(401);
+    throw new Error("Invalid credentials");
+  }
+
+  // 4. Generate JWT token
+  const token = jwt.sign(
+    { id: user._id, email: user.email },
+    process.env.JWT_SECRET,
+    { expiresIn: "1d" } // 1 day
+  );
+
+  // 5. Send response
+  res.status(200).json({
+    message: "Login successful",
+    token,
+    user: {
+      id: user._id,
+      username: user.username,
+      email: user.email,
+    },
+  });
+});
+
+
+module.exports = { signupHandler, loginHandler };

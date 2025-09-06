@@ -1,3 +1,5 @@
+// middleware/errorHandler.js
+
 function errorHandler(err, req, res, next) {
   console.error(err); // log for debugging
 
@@ -6,22 +8,22 @@ function errorHandler(err, req, res, next) {
 
   switch (err.type) {
     case "BAD_REQUEST":
-      statusCode = process.env.STATUS_BAD_REQUEST;
+      statusCode = 400; // Bad Request
       break;
     case "UNAUTHORIZED":
-      statusCode = process.env.STATUS_UNAUTHORIZED;
+      statusCode = 401; // Unauthorized
       break;
     case "FORBIDDEN":
-      statusCode = process.env.STATUS_FORBIDDEN;
+      statusCode = 403; // Forbidden
       break;
     case "NOT_FOUND":
-      statusCode = process.env.STATUS_NOT_FOUND;
+      statusCode = 404; // Not Found
       break;
     case "CONFLICT":
-      statusCode = process.env.STATUS_CONFLICT;
+      statusCode = 409; // Conflict
       break;
     default:
-      statusCode = process.env.STATUS_INTERNAL_ERROR;
+      statusCode = 500; // Internal Server Error
   }
 
   res.status(statusCode).json({
@@ -34,3 +36,5 @@ function errorHandler(err, req, res, next) {
 }
 
 module.exports = errorHandler;
+
+
