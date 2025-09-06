@@ -186,6 +186,7 @@
     </div>
 
     <script>
+      // Password validation on signup form
       function validateSignUp() {
         const password = document.getElementById("password").value;
         const confirmPassword =
@@ -193,21 +194,23 @@
 
         if (password !== confirmPassword) {
           alert("Passwords do not match.");
-          return false;
+          return false; // prevent submission
         }
 
         alert("Sign-up successful (simulated)");
+        return false; // prevent actual form submission
+      }
 
+      // Google OAuth button listener
+      document.addEventListener("DOMContentLoaded", () => {
         const googleBtn = document.querySelector(".google-btn");
-
         googleBtn.addEventListener("click", () => {
           // Redirect user to backend endpoint to start OAuth
           window.location.href = "/api/auth/google";
         });
-
-        return false; // prevent actual form submission
-      }
+      });
     </script>
+
     <script src="./signupAuth.js"></script>
   </body>
 </html>
