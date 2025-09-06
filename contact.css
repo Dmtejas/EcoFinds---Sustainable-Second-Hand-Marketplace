@@ -1,0 +1,254 @@
+/* ===== Contact Page Styling (contact.css) ===== */
+
+/* Body & Page Background */
+body {
+  background-color: #fdfdfd; /* soft white */
+  color: #222;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+}
+
+/* Main container */
+main {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Back Button */
+.back-button {
+  display: inline-block;
+  margin-bottom: 25px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.back-button:hover {
+  background-color: #388e3c;
+  transform: translateY(-2px);
+}
+
+/* Section Heading */
+main h2 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  color: #2e7d32;
+  border-bottom: 3px solid #e0e0e0;
+  padding-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+/* Paragraphs */
+main p {
+  margin-bottom: 20px;
+  text-align: justify;
+  color: #555;
+  font-size: 1.05rem;
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.contact-form label {
+  font-weight: 500;
+  color: #222;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+  color: #222;
+  font-size: 1rem;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+  outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+.submit-btn {
+  padding: 12px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #388e3c;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #f5f5f5;
+  font-size: 0.95rem;
+  margin-top: 40px;
+  color: #555;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* ===== Header Styling ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #2e7d32;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+header nav.desktop-nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav.desktop-nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  padding: 10px 14px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+header nav.desktop-nav ul li a:hover {
+  background: #a5d6a7;
+  color: #222;
+}
+
+.button-primary {
+  background: #fff;
+  color: #2e7d32 !important;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.button-primary:hover {
+  background: #a5d6a7;
+  color: #222 !important;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Side Drawer Styling */
+.side-drawer {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 250px;
+  height: 100%;
+  background: #fff;
+  color: #2e7d32;
+  box-shadow: 2px 0 12px rgba(0,0,0,0.15);
+  transition: left 0.3s ease-in-out;
+  z-index: 1500;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-drawer.open {
+  left: 0;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.drawer-header .logo {
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.close-btn {
+  font-size: 1.3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #222;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mobile-nav ul li a {
+  text-decoration: none;
+  color: #2e7d32;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.mobile-nav ul li a:hover {
+  color: #4caf50;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  header nav.desktop-nav {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+}

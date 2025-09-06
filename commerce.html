@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Products - EcoFinds</title>
+  <link rel="stylesheet" href="commerce.css">
+</head>
+<body>
+
+  <header>
+    <button class="hamburger" aria-label="Open menu">☰</button>
+    <div class="logo">EcoFinds</div>
+    <nav class="desktop-nav">
+      <ul>
+        <li><a href="#">Browse</a></li>
+        <li><a href="#">My Listings</a></li>
+        <li><a href="#">Cart</a></li>
+        <li><a href="#" class="button-primary">Login/Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Mobile Side Drawer -->
+  <aside class="side-drawer">
+    <div class="drawer-header">
+      <span class="logo" id="HamburgerLogo"><b>EcoFinds</b></span>
+      <button class="close-btn" aria-label="Close menu">✖</button>
+    </div>
+    <nav class="mobile-nav">
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main>
+    <section class="filters">
+      <h2>Find Your Next Treasure</h2>
+      <form id="search-filter-form">
+        <div class="form-group">
+          <label for="search-box">Search by Keyword</label>
+          <input type="search" id="search-box" name="search" placeholder="e.g., vintage chair, iphone x...">
+        </div>
+
+        <div class="form-group">
+          <label for="category-select">Filter by Category</label>
+          <select id="category-select" name="category">
+            <option value="all" id="blue">All Categories</option>
+            <option value="electronics">Electronics</option>
+            <option value="furniture">Furniture</option>
+            <option value="clothing">Clothing</option>
+            <option value="books">Books</option>
+            <option value="home-goods">Home Goods</option>
+          </select>
+        </div>
+        <button type="submit" class="button-search">Apply Filters</button>
+      </form>
+    </section>
+
+    <section class="product-grid">
+      <h2>Available Items</h2>
+      <div class="grid-container">
+
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=870&q=80" alt="Modern white chair">
+          <div class="card-content">
+            <h3>Well-Loved Leather Armchair</h3>
+            <p class="product-category">Furniture</p>
+            <p class="product-price">$150.00</p>
+            <a href="index.html" class="button-details">View Details</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1515940175183-671b1604a3f5?auto=format&fit=crop&w=774&q=80" alt="Classic Acoustic Guitar">
+          <div class="card-content">
+            <h3>Classic Acoustic Guitar</h3>
+            <p class="product-category">Musical Instruments</p>
+            <p class="product-price">$85.00</p>
+            <a href="index.html" class="button-details">View Details</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1544947950-606c5a5d33ce?auto=format&fit=crop&w=774&q=80" alt="Stack of hardcover novels">
+          <div class="card-content">
+            <h3>Set of Hardcover Novels</h3>
+            <p class="product-category">Books</p>
+            <p class="product-price">$25.00</p>
+            <a href="index.html" class="button-details">View Details</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1593152169421-a6b7c032f3d6?auto=format&fit=crop&w=774&q=80" alt="Retro gaming console controller">
+          <div class="card-content">
+            <h3>Retro Gaming Console</h3>
+            <p class="product-category">Electronics</p>
+            <p class="product-price">$120.00</p>
+            <a href="index.html" class="button-details">View Details</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 EcoFinds. Empowering Sustainable Consumption.</p>
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const drawer = document.querySelector('.side-drawer');
+    const closeBtn = document.querySelector('.close-btn');
+
+    hamburger.addEventListener('click', () => {
+      drawer.classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      drawer.classList.remove('open');
+    });
+  </script>
+
+</body>
+</html>

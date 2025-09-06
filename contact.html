@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - EcoFinds</title>
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <button class="hamburger" aria-label="Open menu">☰</button>
+    <div class="logo">EcoFinds</div>
+    <nav class="desktop-nav">
+      <ul>
+        <li><a href="index.html">Browse</a></li>
+        <li><a href="#">My Listings</a></li>
+        <li><a href="#">Cart</a></li>
+        <li><a href="#" class="button-primary">Login/Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Mobile Side Drawer -->
+  <aside class="side-drawer">
+    <div class="drawer-header">
+      <span class="logo"><b>EcoFinds</b></span>
+      <button class="close-btn" aria-label="Close menu">✖</button>
+    </div>
+    <nav class="mobile-nav">
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    
+    <section class="contact-section">
+      <h2>Contact Us</h2>
+      <p>
+        Have questions or suggestions? Reach out to EcoFinds and we’ll be happy
+        to assist you. We value your feedback and aim to provide the best
+        sustainable shopping experience possible.
+      </p>
+
+      <form class="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </br>
+    </section>
+
+     <!-- Back Button -->
+    <a href="commerce.html" class="back-button">← Back</a>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 EcoFinds. Empowering Sustainable Consumption.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const drawer = document.querySelector('.side-drawer');
+    const closeBtn = document.querySelector('.close-btn');
+
+    hamburger.addEventListener('click', () => {
+      drawer.classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      drawer.classList.remove('open');
+    });
+  </script>
+
+</body>
+</html>
