@@ -1,0 +1,315 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* --- CSS Variables for Easy Theme Management --- */
+:root {
+  --primary-color: #2a6f47; /* A richer, deeper green */
+  --primary-hover: #1f5134; /* Darker green for hover effects */
+  --secondary-color: #f4a261; /* Warm accent color (optional use for special buttons) */
+  --background-color: #fbfaf8; /* Soft, warm off-white background */
+  --card-background: #ffffff;
+  --text-primary: #2d3748; /* Dark grey for text instead of pure black */
+  --text-secondary: #718096; /* Lighter grey for descriptions */
+  --border-color: #e2e8f0;
+  --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.08);
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+}
+
+/* --- Global Reset & Typography --- */
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: var(--background-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* --- Header Styling --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card-background);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.hamburger {
+  font-size: 1.8rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.action-btn {
+  background: none;
+  color: var(--text-secondary);
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: var(--border-radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.action-btn:hover {
+  background: var(--background-color);
+  color: var(--text-primary);
+}
+
+.button-primary {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  border-radius: var(--border-radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* --- Mobile Side Drawer --- */
+.side-drawer {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Increased width slightly */
+  width: 250px;
+  height: 100vh;
+  background: var(--card-background);
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+  transition: left 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 1001;
+}
+
+.side-drawer.open {
+  left: 0;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.close-btn {
+    border: none;
+    background: transparent;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: var(--text-primary);
+}
+
+.mobile-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 1rem 0;
+}
+
+.mobile-nav li a {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-color);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.mobile-nav li a:hover {
+  background: var(--background-color);
+  color: var(--primary-color);
+}
+
+.mobile-nav li:last-child a {
+    border-bottom: none;
+    margin: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius-md);
+    text-align: center;
+}
+
+.mobile-nav li:last-child a:hover {
+    background: var(--primary-hover);
+    color: white;
+}
+
+
+/* --- Main Content & Introduction --- */
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.intro h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.intro p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- Search and Filter Styling --- */
+.filters {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.search-bar, select {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+  background: var(--card-background);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-bar {
+  width: 300px;
+  max-width: 100%;
+}
+
+.search-bar:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(42, 111, 71, 0.1);
+}
+
+/* --- Enhanced Product Grid Styling --- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background: var(--card-background);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Ensure content respects rounded corners */
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px; /* Fixed height for consistent card size */
+  object-fit: cover; /* Ensures image covers area without distortion */
+  display: block;
+}
+
+.product-card-content {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allows flexible height based on content */
+  text-align: left;
+}
+
+.product-card h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  flex-grow: 1; /* Pushes button to the bottom */
+}
+
+.add-cart {
+  background: var(--primary-color);
+  border: none;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.3s ease;
+  width: 100%; /* Make button full width */
+}
+
+.add-cart:hover {
+  background: var(--primary-hover);
+}
+
+/* --- Footer Styling --- */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  background: var(--card-background);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}

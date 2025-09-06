@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - EcoFinds</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-left">
+      <button class="hamburger" aria-label="Open menu">☰</button>
+      <div class="logo">EcoFinds</div>
+    </div>
+    <div class="header-actions">
+      <a href="cart.html" class="action-btn">🛒 Cart</a>
+      <a href="profile.html" class="action-btn">👤 Profile</a>
+      <a href="index.html" class="button-primary">Logout</a>
+    </div>
+  </header>
+
+  <!-- Mobile Side Drawer -->
+  <aside class="side-drawer">
+    <div class="drawer-header">
+      <span class="logo"><b>EcoFinds</b></span>
+      <button class="close-btn" aria-label="Close menu">✖</button>
+    </div>
+    <nav class="mobile-nav">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="mylistings.html">My Listings</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="help.html">Help</a></li>
+        <li><a href="sustainability.html">Sustainability</a></li>
+        <li><a href="index.html" class="button-primary">Logout</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    <section class="intro">
+      <h2>Discover Pre-loved Products 🌍</h2>
+      <p>Browse items available in our community marketplace. Support sustainability and save money!</p>
+    </section>
+
+    <!-- Search and Filter -->
+    <section class="filters">
+      <input type="text" placeholder="🔍 Search products..." class="search-bar">
+      <select>
+        <option value="">All Categories</option>
+        <option value="furniture">Furniture</option>
+        <option value="electronics">Electronics</option>
+        <option value="fashion">Fashion</option>
+        <option value="books">Books</option>
+      </select>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="product-grid">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="Product 1">
+        <h3>Wooden Study Table</h3>
+        <p class="price">₹2,500</p>
+        <p class="desc">Sturdy wooden table, lightly used. Perfect for students.</p>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="Product 2">
+        <h3>Retro Gaming Console</h3>
+        <p class="price">₹4,000</p>
+        <p class="desc">Classic console with 2 controllers and 10 games.</p>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="Product 3">
+        <h3>Leather Armchair</h3>
+        <p class="price">₹3,200</p>
+        <p class="desc">Comfortable, well-loved leather chair with rustic vibes.</p>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="Product 4">
+        <h3>Hardcover Book Set</h3>
+        <p class="price">₹1,200</p>
+        <p class="desc">Collection of 8 novels in excellent condition.</p>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 EcoFinds. Empowering Sustainable Consumption.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const drawer = document.querySelector('.side-drawer');
+    const closeBtn = document.querySelector('.close-btn');
+
+    hamburger.addEventListener('click', () => {
+      drawer.classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      drawer.classList.remove('open');
+    });
+
+    // Simple "Add to Cart" alert
+    const addButtons = document.querySelectorAll('.add-cart');
+    addButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        alert('Item added to cart!');
+      });
+    });
+  </script>
+</body>
+</html>
