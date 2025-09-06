@@ -1,179 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EcoFinds Login</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: "Inter", sans-serif;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Products - EcoFinds</title>
+  <link rel="stylesheet" href="commerce.css">
+</head>
+<body>
 
-      body {
-        background-color: #f8f9fa;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-      }
+  <header>
+    <button class="hamburger" aria-label="Open menu">☰</button>
+    <div class="logo">EcoFinds</div>
+    <nav class="desktop-nav">
+      <ul>
+        <li><a href="login.html" class="button-primary">Login/Register</a></li>
+      </ul>
+    </nav>
+  </header>
 
-      .container {
-        display: flex;
-        width: 800px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        border-radius: 16px;
-        overflow: hidden;
-        background-color: #fff;
-      }
-
-      .left {
-        flex: 1;
-        background-color: #e8f5e9;
-        padding: 60px 40px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .left h2 {
-        font-size: 32px;
-        color: #2e7d32;
-        margin-bottom: 16px;
-      }
-
-      .left p {
-        color: #388e3c;
-        font-size: 16px;
-        line-height: 1.6;
-      }
-
-      .right {
-        flex: 1;
-        padding: 60px 40px;
-      }
-
-      .right h2 {
-        font-size: 28px;
-        color: #2e7d32;
-        margin-bottom: 24px;
-        text-align: center;
-      }
-
-      input[type="email"],
-      input[type="password"] {
-        width: 100%;
-        padding: 12px;
-        margin-bottom: 16px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        font-size: 16px;
-      }
-
-      button {
-        width: 100%;
-        background-color: #4caf50;
-        color: white;
-        padding: 12px;
-        border: none;
-        border-radius: 8px;
-        font-size: 16px;
-        cursor: pointer;
-        margin-bottom: 16px;
-      }
-
-      button:hover {
-        background-color: #45a049;
-      }
-
-      .google-btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        color: #333;
-      }
-
-      .google-btn img {
-        height: 20px;
-      }
-
-      .signup {
-        text-align: center;
-        margin-top: 16px;
-        font-size: 14px;
-      }
-
-      .signup a {
-        color: #2e7d32;
-        text-decoration: none;
-        font-weight: 600;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="left">
-        <h2>Welcome Back 🌿</h2>
-        <p>
-          Log in to EcoFinds and continue your journey towards sustainable
-          shopping.
-        </p>
-      </div>
-      <div class="right">
-        <h2>EcoFinds</h2>
-        <form onsubmit="return validateForm()">
-          <input type="email" id="email" placeholder="Email" required />
-          <input
-            type="password"
-            id="password"
-            placeholder="Password"
-            required
-          />
-          <button type="submit">Login</button>
-          <button class="google-btn" type="button">
-            <img
-              src="https://www.svgrepo.com/show/475656/google-color.svg"
-              alt="Google Logo"
-            />
-            Continue with Google
-          </button>
-          <div class="signup">
-            Don’t have an account? <a href="signup.html">Sign Up</a><br>
-          <a href="forget.html" style="color:#2e7d32; text-decoration:none; font-weight:600;">Forgot Password?</a>
-          </div>
-        </form>
-      </div>
+  <!-- Mobile Side Drawer -->
+  <aside class="side-drawer">
+    <div class="drawer-header">
+      <span class="logo" id="HamburgerLogo"><b>EcoFinds</b></span>
+      <button class="close-btn" aria-label="Close menu">✖</button>
     </div>
+    <nav class="mobile-nav">
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="help.html">Help</a></li>
+      </ul>
+    </nav>
+  </aside>
 
-    <script>
-      function validateForm() {
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
+  <main>
+    <section class="filters">
+      <h2>Find Your Next Treasure</h2>
+      <form id="search-filter-form">
+        <div class="form-group">
+          <label for="search-box">Search by Keyword</label>
+          <input type="search" id="search-box" name="search" placeholder="e.g., vintage chair, iphone x...">
+        </div>
 
-        if (!email || !password) {
-          alert("Please fill in all required fields.");
-          return false;
-        }
-        const googleBtn = document.querySelector(".google-btn");
+        <div class="form-group">
+          <label for="category-select">Filter by Category</label>
+          <select id="category-select" name="category">
+            <option value="all" id="blue">All Categories</option>
+            <option value="electronics">Electronics</option>
+            <option value="furniture">Furniture</option>
+            <option value="clothing">Clothing</option>
+            <option value="books">Books</option>
+            <option value="home-goods">Home Goods</option>
+          </select>
+        </div>
+        <button type="submit" class="button-search">Apply Filters</button>
+      </form>
+    </section>
 
-      if (email === "test@example.com" && password === "1234") {
-      // Redirect to dashboard
-      window.location.href = "dashboard.html";
-      return false; // prevent normal form submission
-    } else {
-      alert("Invalid email or password!");
-      return false; // stop form submission
-    }
-    }
+    <section class="product-grid">
+      <h2>Available Items</h2>
+      <div class="grid-container">
+
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=870&q=80" alt="Modern white chair">
+          <div class="card-content">
+            <h3>Well-Loved Leather Armchair</h3>
+            <p class="product-category">Furniture</p>
+            <p class="product-price">$150.00</p>
+            <a href="login.html" class="button-details">View Details</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1515940175183-671b1604a3f5?auto=format&fit=crop&w=774&q=80" alt="Classic Acoustic Guitar">
+          <div class="card-content">
+            <h3>Classic Acoustic Guitar</h3>
+            <p class="product-category">Musical Instruments</p>
+            <p class="product-price">$85.00</p>
+            <a href="login.html" class="button-details">View Details</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1544947950-606c5a5d33ce?auto=format&fit=crop&w=774&q=80" alt="Stack of hardcover novels">
+          <div class="card-content">
+            <h3>Set of Hardcover Novels</h3>
+            <p class="product-category">Books</p>
+            <p class="product-price">$25.00</p>
+            <a href="login.html" class="button-details">View Details</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1593152169421-a6b7c032f3d6?auto=format&fit=crop&w=774&q=80" alt="Retro gaming console controller">
+          <div class="card-content">
+            <h3>Retro Gaming Console</h3>
+            <p class="product-category">Electronics</p>
+            <p class="product-price">$120.00</p>
+            <a href="login.html" class="button-details">View Details</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 EcoFinds. Empowering Sustainable Consumption.</p>
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const drawer = document.querySelector('.side-drawer');
+    const closeBtn = document.querySelector('.close-btn');
+
+    hamburger.addEventListener('click', () => {
+      drawer.classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      drawer.classList.remove('open');
+    });
   </script>
+
 </body>
 </html>

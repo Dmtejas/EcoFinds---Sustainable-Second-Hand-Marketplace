@@ -24,19 +24,31 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await response.json();
 
       if (!response.ok) {
-        // Backend returned an error
         alert(data.error?.message || "Login failed");
       } else {
-        // Success
-        alert(data.message);
-        console.log("User data:", data.user);
+        // ✅ Success
         console.log("JWT Token:", data.token);
 
-        // Optionally store the token in localStorage
+        // Store the token in localStorage
         localStorage.setItem("authToken", data.token);
 
-        // Redirect to dashboard or home page
-        // window.location.href = "/dashboard.html";
+        // ✅ Now request the protected home route
+        const homeResponse = await fetch("/api/user/home", {
+          method: "GET",
+          headers: {
+            "Authorization": `Bearer ${data.token}`
+          }
+        });
+
+        if (homeResponse.ok) {
+          // Load the protected home.html content
+          const html = await homeResponse.text();
+          document.open();
+          document.write(html);
+          document.close();
+        } else {
+          alert("Failed to load protected page");
+        }
       }
     } catch (err) {
       console.error("Error connecting to server:", err);

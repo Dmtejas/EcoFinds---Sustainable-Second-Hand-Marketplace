@@ -5,6 +5,7 @@ const asyncHandler = require("express-async-handler");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/userModel");
+const path = require("path"); 
 
 const signupHandler = asyncHandler(async (req, res) => {
   const { username, email, password } = req.body;
@@ -46,45 +47,48 @@ const signupHandler = asyncHandler(async (req, res) => {
 
 const loginHandler = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
+  console.log("📩 Login attempt:", { email, password }); // Debug
 
-  // 1. Validate input
   if (!email || !password) {
     res.status(400);
     throw new Error("Email and password are required");
   }
 
-  // 2. Find user
   const user = await User.findOne({ email });
+  console.log("🔍 Found user:", user); // Debug
+
   if (!user) {
-    res.status(401); // Unauthorized
+    res.status(401);
     throw new Error("Invalid credentials");
   }
 
-  // 3. Compare password
   const isMatch = await bcrypt.compare(password, user.password);
+  console.log("✅ Password match:", isMatch); // Debug
+
   if (!isMatch) {
     res.status(401);
     throw new Error("Invalid credentials");
   }
 
-  // 4. Generate JWT token
   const token = jwt.sign(
     { id: user._id, email: user.email },
     process.env.JWT_SECRET,
-    { expiresIn: "1d" } // 1 day
+    { expiresIn: "1d" }
   );
 
-  // 5. Send response
+  console.log(`token: ${token}`)
+
   res.status(200).json({
     message: "Login successful",
     token,
-    user: {
-      id: user._id,
-      username: user.username,
-      email: user.email,
-    },
+    user: { id: user._id, username: user.username, email: user.email },
   });
 });
 
 
-module.exports = { signupHandler, loginHandler };
+const showHome = asyncHandler(async (req, res) => {
+   res.sendFile(path.join(__dirname, "../../frontend/home.html"));
+})
+
+
+module.exports = { signupHandler, loginHandler, showHome };

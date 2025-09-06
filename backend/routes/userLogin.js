@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router()
 const passport = require("passport");
-const { signupHandler, loginHandler } = require('../controller/userLogin')
+const { signupHandler, loginHandler, showHome } = require('../controller/userLogin');
+const verifyJWT = require('../middleware/verifyJWT');
 
 router.route('/signup').post(signupHandler)
 
@@ -21,4 +22,6 @@ router.get("/google/callback",
     res.redirect(`/login.html?token=${token}`);
   }
 );
+
+router.route('/home').get(verifyJWT, showHome);
 module.exports = router
