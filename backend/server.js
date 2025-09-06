@@ -16,12 +16,14 @@ console.log("GOOGLE_CLIENT_ID:", process.env.GOOGLE_CLIENT_ID);
 console.log("GOOGLE_CLIENT_SECRET:", process.env.GOOGLE_CLIENT_SECRET);
 
 // Serve static files from frontend folder
-app.use(express.static(path.join(__dirname, "../frontend")));
+
 
 // For all other routes, serve index.html (optional for SPA)
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend/commerce.html"));
 });
+
+app.use(express.static(path.join(__dirname, "../frontend")));
 app.use(passport.initialize());
 app.use(express.json());
 app.use('/api/user', require('./routes/userLogin'))
