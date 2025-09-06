@@ -165,14 +165,15 @@
         }
         const googleBtn = document.querySelector(".google-btn");
 
-        googleBtn.addEventListener("click", () => {
-          // Redirect user to backend endpoint to start OAuth
-          window.location.href = "/api/auth/google";
-        });
-        return true;
-        
-      }
-    </script>
-    <script src="./auth.js"></script>
-  </body>
+      if (email === "test@example.com" && password === "1234") {
+      // Redirect to dashboard
+      window.location.href = "dashboard.html";
+      return false; // prevent normal form submission
+    } else {
+      alert("Invalid email or password!");
+      return false; // stop form submission
+    }
+    }
+  </script>
+</body>
 </html>
