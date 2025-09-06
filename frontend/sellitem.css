@@ -1,0 +1,289 @@
+:root {
+  --primary-color: #2a6f47;
+  --primary-hover: #1f5134;
+  --background-color: #fbfaf8;
+  --card-background: #ffffff;
+  --text-primary: #2d3748;
+  --text-secondary: #718096;
+  --border-color: #e2e8f0;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+  --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background: var(--background-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card-background);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.hamburger {
+  font-size: 1.8rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.action-btn {
+  background: none;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: var(--border-radius-md);
+}
+
+.button-sell, .button-primary, .button-home{
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  border-radius: var(--border-radius-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+#backtohome{
+    text-decoration:none;
+    color:white;
+}
+.button-sell:hover, .button-primary:hover {
+  background: var(--primary-hover);
+}
+
+main {
+  padding: 2rem;
+}
+
+.sell-form-container {
+  max-width: 1000px;
+  margin: 1rem auto;
+  background: var(--card-background);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem 3rem;
+  box-shadow: var(--shadow-light);
+}
+
+.sell-form-container h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.sell-form-container > p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+}
+
+.listing-form .form-group {
+  margin-bottom: 1.25rem;
+}
+
+.listing-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.listing-form input[type="text"],
+.listing-form input[type="number"],
+.listing-form select,
+.listing-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+  background: #fdfdfd;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.listing-form input[type="text"]:focus,
+.listing-form input[type="number"]:focus,
+.listing-form select:focus,
+.listing-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(42, 111, 71, 0.1);
+}
+
+.form-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
+}
+
+.form-group-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-group.half-width {
+  flex: 1;
+}
+
+.price-input-group {
+  display: flex;
+  align-items: center;
+}
+
+.price-input-group span {
+  padding: 0.75rem 1rem;
+  background: #f3f4f6;
+  border: 1px solid var(--border-color);
+  border-right: none;
+  border-radius: var(--border-radius-md) 0 0 var(--border-radius-md);
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.price-input-group input {
+  border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+}
+
+.file-upload-area {
+  border: 2px dashed var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  background: #fdfdfd;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.file-upload-area:hover {
+  border-color: var(--primary-color);
+  background-color: #f8fbf8;
+}
+
+.file-upload-area .upload-icon {
+  font-size: 2rem;
+  color: var(--primary-color);
+  line-height: 1;
+}
+
+.file-upload-area p {
+  margin: 0.25rem 0;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.file-upload-area .small-text {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.listing-form input[type="file"] {
+  display: none;
+}
+
+.image-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.form-actions {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.button-submit-listing, .button-secondary {
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button-submit-listing {
+  background: var(--primary-color);
+  color: white;
+}
+
+.button-submit-listing:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.button-secondary {
+  background: #f3f4f6;
+  color: var(--text-secondary);
+}
+
+.button-secondary:hover {
+  background: #e2e8f0;
+}
+
+@media (max-width: 900px) {
+  .form-layout {
+    grid-template-columns: 1fr;
+  }
+  .sell-form-container {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-actions {
+    display: none;
+  }
+  .form-group-row {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+}
