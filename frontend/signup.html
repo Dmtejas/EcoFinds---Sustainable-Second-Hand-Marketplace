@@ -1,184 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EcoFinds Sign Up</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-    }
-
-    body {
-      background-color: #f4f4f4;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .container {
-      width: 800px;
-      height: 550px;
-      background-color: #fff;
-      border-radius: 16px;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
-      display: flex;
-      overflow: hidden;
-    }
-
-    .left-panel {
-      background-color: #e6f4ea;
-      flex: 1;
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .left-panel h2 {
-      color: #2e7d32;
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .left-panel p {
-      color: #388e3c;
-      text-align: center;
-      font-size: 15px;
-      line-height: 1.5;
-      max-width: 280px;
-    }
-
-    .right-panel {
-      flex: 1;
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .right-panel h2 {
-      text-align: center;
-      color: #2e7d32;
-      margin-bottom: 24px;
-      font-size: 26px;
-      font-weight: 700;
-    }
-
-    form {
-      width: 100%;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
-      width: 100%;
-      padding: 12px 14px;
-      margin-bottom: 16px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 15px;
-    }
-
-    .signup-btn {
-      width: 100%;
-      background-color: #4caf50;
-      color: white;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      margin-bottom: 16px;
-    }
-
-    .signup-btn:hover {
-      background-color: #43a047;
-    }
-
-    .google-btn {
-      width: 100%;
-      background-color: white;
-      border: 1px solid #ccc;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 15px;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-bottom: 20px;
-      cursor: pointer;
-    }
-
-    .google-btn img {
-      width: 20px;
-      height: 20px;
-    }
-
-    .login-link {
-      text-align: center;
-      font-size: 14px;
-    }
-
-    .login-link a {
-      color: #2e7d32;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .login-link a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="left-panel">
-      <h2>Join Us 🌿</h2>
-      <p>Sign up to EcoFinds and start your journey towards sustainable shopping.</p>
-    </div>
-    <div class="right-panel">
-      <h2>EcoFinds</h2>
-      <form onsubmit="return validateSignUp()">
-        <input type="text" id="username" placeholder="Username" required />
-        <input type="email" id="email" placeholder="Email" required />
-        <input type="password" id="password" placeholder="Password" required />
-        <input type="password" id="confirm-password" placeholder="Confirm Password" required />
-        <button class="signup-btn" type="submit">Sign Up</button>
-        <button type="button" class="google-btn">
-          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google Logo">
-          Sign Up with Google
-        </button>
-        <div class="login-link">
-          Already have an account? <a href="index.html">Login</a>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <script>
-    function validateSignUp() {
-      const password = document.getElementById("password").value;
-      const confirmPassword = document.getElementById("confirm-password").value;
-
-      if (password !== confirmPassword) {
-        alert("Passwords do not match.");
-        return false;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoFinds Sign Up</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
       }
 
-      alert("Sign-up successful (simulated)");
-      return false; // prevent actual form submission
-    }
-  </script>
-</body>
+      body {
+        background-color: #f4f4f4;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        width: 800px;
+        height: 550px;
+        background-color: #fff;
+        border-radius: 16px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+        display: flex;
+        overflow: hidden;
+      }
+
+      .left-panel {
+        background-color: #e6f4ea;
+        flex: 1;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .left-panel h2 {
+        color: #2e7d32;
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      .left-panel p {
+        color: #388e3c;
+        text-align: center;
+        font-size: 15px;
+        line-height: 1.5;
+        max-width: 280px;
+      }
+
+      .right-panel {
+        flex: 1;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .right-panel h2 {
+        text-align: center;
+        color: #2e7d32;
+        margin-bottom: 24px;
+        font-size: 26px;
+        font-weight: 700;
+      }
+
+      form {
+        width: 100%;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 12px 14px;
+        margin-bottom: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 15px;
+      }
+
+      .signup-btn {
+        width: 100%;
+        background-color: #4caf50;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        margin-bottom: 16px;
+      }
+
+      .signup-btn:hover {
+        background-color: #43a047;
+      }
+
+      .google-btn {
+        width: 100%;
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 20px;
+        cursor: pointer;
+      }
+
+      .google-btn img {
+        width: 20px;
+        height: 20px;
+      }
+
+      .login-link {
+        text-align: center;
+        font-size: 14px;
+      }
+
+      .login-link a {
+        color: #2e7d32;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .login-link a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-panel">
+        <h2>Join Us 🌿</h2>
+        <p>
+          Sign up to EcoFinds and start your journey towards sustainable
+          shopping.
+        </p>
+      </div>
+      <div class="right-panel">
+        <h2>EcoFinds</h2>
+        <form onsubmit="return validateSignUp()">
+          <input type="text" id="username" placeholder="Username" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <input
+            type="password"
+            id="confirm-password"
+            placeholder="Confirm Password"
+            required
+          />
+          <button class="signup-btn" type="submit">Sign Up</button>
+          <button type="button" class="google-btn">
+            <img
+              src="https://www.svgrepo.com/show/475656/google-color.svg"
+              alt="Google Logo"
+            />
+            Sign Up with Google
+          </button>
+          <div class="login-link">
+            Already have an account? <a href="index.html">Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function validateSignUp() {
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirm-password").value;
+
+        if (password !== confirmPassword) {
+          alert("Passwords do not match.");
+          return false;
+        }
+
+        alert("Sign-up successful (simulated)");
+
+        const googleBtn = document.querySelector(".google-btn");
+
+        googleBtn.addEventListener("click", () => {
+          // Redirect user to backend endpoint to start OAuth
+          window.location.href = "/api/auth/google";
+        });
+
+        return false; // prevent actual form submission
+      }
+    </script>
+    <script src="./signupAuth.js"></script>
+  </body>
 </html>
