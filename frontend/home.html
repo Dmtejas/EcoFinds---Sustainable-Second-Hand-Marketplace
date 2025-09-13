@@ -1,97 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - EcoFinds</title>
-  <link rel="stylesheet" href="home.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - EcoFinds</title>
+    <link rel="stylesheet" href="home.css">
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="header-left">
-      <button class="hamburger" aria-label="Open menu">☰</button>
-      <div class="logo">EcoFinds</div>
-    </div>
-    <div class="header-actions">
-        <a href="sellitem.html" class="button-sell">🏷️Sell Item</a>
-      <a href="cart.html" class="action-btn">🛒 Cart</a>
-      <a href="profile.html" class="action-btn">👤 Profile</a>
-      <a href="index.html" class="button-primary">Logout</a>
-    </div>
-  </header>
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <button class="hamburger" aria-label="Open menu">☰</button>
+            <div class="logo">EcoFinds</div>
+        </div>
+        <div class="header-actions">
+            <a href="sellitem.html" class="button-sell">🏷️Sell Item</a>
+            <a href="cart.html" class="action-btn">🛒 Cart</a>
+            <a href="profile.html" class="action-btn">👤 Profile</a>
+            <a href="index.html" class="button-primary">Logout</a>
+        </div>
+    </header>
 
-  <!-- Mobile Side Drawer -->
-  <aside class="side-drawer">
-    <div class="drawer-header">
-      <span class="logo"><b>EcoFinds</b></span>
-      <button class="close-btn" aria-label="Close menu">✖</button>
-    </div>
-    <nav class="mobile-nav">
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="mylistings.html">My Listings</a></li>
-        <li><a href="cart.html">Cart</a></li>
-        <li><a href="help.html">Help</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="index.html" class="button-primary">Logout</a></li>
-      </ul>
-    </nav>
-  </aside>
+    <!-- Mobile Side Drawer -->
+    <aside class="side-drawer">
+        <div class="drawer-header">
+            <span class="logo"><b>EcoFinds</b></span>
+            <button class="close-btn" aria-label="Close menu">✖</button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="mylistings.html">My Listings</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="index.html" class="button-primary">Logout</a></li>
+            </ul>
+        </nav>
+    </aside>
 
-  <!-- Main Content -->
-  <main>
-    <section class="intro">
-      <h2>Discover Pre-loved Products 🌍</h2>
-      <p>Browse items available in our community marketplace. Support sustainability and save money!</p>
-    </section>
+    <!-- Main Content -->
+    <main>
+        <section class="intro">
+            <h2>Discover Pre-loved Products 🌍</h2>
+            <p>Browse items available in our community marketplace. Support sustainability and save money!</p>
+        </section>
 
-    <!-- Search and Filter -->
-    <section class="filters">
-      <input type="text" placeholder="🔍 Search products..." class="search-bar">
-      <select>
-        <option value="">All Categories</option>
-        <option value="furniture">Furniture</option>
-        <option value="electronics">Electronics</option>
-        <option value="fashion">Fashion</option>
-        <option value="books">Books</option>
-      </select>
-    </section>
+        <!-- Search and Filter -->
+        <section class="filters">
+            <input type="text" placeholder="🔍 Search products..." class="search-bar">
+            <select>
+                <option value="">All Categories</option>
+                <option value="furniture">Furniture</option>
+                <option value="electronics">Electronics</option>
+                <option value="fashion">Fashion</option>
+                <option value="books">Books</option>
+            </select>
+        </section>
 
-    <!-- Product Grid -->
-    <section class="product-grid" id="product-grid">
-      
-    </section>
-  </main>
+        <!-- Product Grid -->
+        <section class="product-grid" id="product-grid">
+            <!-- Dynamic products loaded via home.js -->
+        </section>
+    </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 EcoFinds. Empowering Sustainable Consumption.</p>
-  </footer>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 EcoFinds. Empowering Sustainable Consumption.</p>
+    </footer>
 
-  <!-- JavaScript -->
-  <script>
-    const hamburger = document.querySelector('.hamburger');
-    const drawer = document.querySelector('.side-drawer');
-    const closeBtn = document.querySelector('.close-btn');
-
-    hamburger.addEventListener('click', () => {
-      drawer.classList.add('open');
-    });
-
-    closeBtn.addEventListener('click', () => {
-      drawer.classList.remove('open');
-    });
-
-    // Simple "Add to Cart" alert
-    const addButtons = document.querySelectorAll('.add-cart');
-    addButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        alert('Item added to cart!');
-      });
-    });
-  </script>
-  <script src="./home.js"></script>
+    <script src="./home.js"></script>
 </body>
+
 </html>

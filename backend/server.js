@@ -22,7 +22,7 @@ console.log("GOOGLE_CLIENT_SECRET:", process.env.GOOGLE_CLIENT_SECRET);
 app.use(express.static(path.join(__dirname, "../frontend")));
 // For all other routes, serve index.html (optional for SPA)
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/commerce.html"));
+    res.sendFile(path.join(__dirname, "../frontend/commerce.html"));
 });
 
 app.use(passport.initialize());
@@ -34,10 +34,9 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use(errorHandler);
 app.listen(PORT, (err) => {
-    if(err) {
+    if (err) {
         console.log("Error connecting to the server");
-    } 
-    else {
+    } else {
         console.log(`Server is running at PORT ${PORT}`)
     }
 })
